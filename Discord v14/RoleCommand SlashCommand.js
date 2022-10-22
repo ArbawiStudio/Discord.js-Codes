@@ -1,3 +1,17 @@
+/*
+ 
+/role add <member> <role>
+/role remove <member> <role>
+/role multiple [All / Bots / Humans] [Add / Remove] <role>  
+
+
+>> ✅ Role Highest Position Error
+
+*/
+
+
+const { ApplicationCommandOptionType, ApplicationCommandType } = require('discord.js')
+
 client.on('ready', async() => {
     await client.application.commands.set([
         {
@@ -5,9 +19,6 @@ client.on('ready', async() => {
             description: 'Role Config',
             type: ApplicationCommandType.ChatInput,
             options: [
-
-                // Give Role
-
                 {
                     name: 'add',
                     description: 'Add Role to Member',
