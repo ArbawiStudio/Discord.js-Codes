@@ -114,6 +114,7 @@ client.on('ready', async() => {
 client.on('interactionCreate', async Interaction => {
     if(!Interaction.isChatInputCommand()) return;
     if(Interaction.commandName === 'role') {
+        if(Interaction.member.permissions.has('ManageRoles')) return Interaction.reply({ content: `${Interaction.user.username}, This Command Required **\`Manage Roles\`** Permission` })
         switch(Interaction.options.getSubcommand()) {
             case 'add' : {
                 const Member = Interaction.options.getMember('member')
